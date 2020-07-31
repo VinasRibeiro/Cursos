@@ -1,0 +1,95 @@
+
+A função funciona como uma caixa para armazenar um código que vai ser usado varias vezes
+
+def lin():
+    print('-' * 30)
+
+Programa Principal
+
+lin()
+print('Teste')
+lin()
+
+Para usar variáveis é necessario estipular qual o nome da variável vai ser usada dentro da função
+
+
+
+EX:
+def titulo(txt)
+    print('-' * 30)
+    print(txt)
+    print('-' * 30)
+
+titulo('   Cunrso em video   ')
+titulo(' Python e Muito Bom  ')
+titulo('oi')
+
+Neste caso a variável é 'txt' que só é usada dentro da função e não no programa principal.
+para usar a função é da mesma forma que qualquer outra função do python.
+As funções tem maneiras de entrar dados diferente quem cria a função que deve explicar como ela funciona
+
+EX:
+def soma(a, b):
+    s = a + b
+
+#Programa principal
+soma(4, 5)
+
+Assim a função para funcionar precisa de duas variáveis 'a' e 'b'.
+E dentro da função ela cria outra variável que é s para guardar a soma de 'a' e 'b'.
+e retorna o valor de s na posição em que foi chamada
+
+Caso vc saiba qual o nome das variáveis usada na função.
+vc pode especificar qual variável recebe qual valor
+
+def soma(a, b):
+    s = a + b
+
+#Programa principal
+soma(b=4, a=5)
+
+
+OBS: quando vc especifica a entrada de um numero fixo de variáveis na função, no caso acima de 2 variáveis
+na hora que vc chamar a função vc não pode colocar mais que foi especificado na função para funcionar,
+mas o python é uma linguagem dinamica e permite uma coisa chamada empacotamento.
+
+EX:
+
+def contador(*num)
+    print(num)
+
+Assim o python pega qualquer quantidade de valor e coloca em uma tupla chamada 'num'.
+Assim vc pode fazer tudo oq é usado com tupla.
+
+EX:
+
+def contador(*num)
+    for valor in num:
+        print(f'{valor} ', end='')
+     print('FIM')
+
+contador(2, 1, 7)
+contador(8, 0)
+contador(4, 4, 7, 6, 2)
+
+Você pode usar listas para inserir em uma função.
+EX:
+
+def dobra(lst):
+    pos = 0
+    while pos < len(lst):
+        lst[pos] *= 2
+        pos += 1
+
+valores = [6, 3, 9, 1, 0, 2]
+dobra(valores)
+print(valores)
+
+Neste cado a lista lst e a lista valores estão ligadas
+ou seja tudo que for alterado na lista lst sera alterado na lista valores.
+O python passa esses valores por referencia e não por valor como em linguagems de baixo nivel
+
+OBS: Isso não é desempacotamento.
+Desempacotamento é quando vc chama uma função e coloca a quantidade de variaveis diferente.
+
+

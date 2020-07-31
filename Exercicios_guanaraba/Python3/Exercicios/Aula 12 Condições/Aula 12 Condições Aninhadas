@@ -1,0 +1,17 @@
+if = se
+
+elif = seria a condição reduzida do python para elseif
+
+else = se não
+
+
+outra forma de comprar numeros e atribuir True ou Flase em uma variável
+
+idade_str = input("Digite sua idade: ")
+idade = int(idade_str)
+
+maior_idade = idade > 18
+crianca     = idade < 12
+adolescente = idade > 12
+
+assim nas variáveis vai estar armazenado False, False, e True

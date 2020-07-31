@@ -1,0 +1,65 @@
+aula 007
+Ordem de precedencia
+ordem em que uma equação é executada
+1 () parenteses
+2 ** potenciação
+3
+*   multiplicação
+/   divisão normal
+//  divisão inteira, sem mostrar numeros quebrados ou depois da virgula
+%   mostra o resto da divisão
+
+4 + -
+
+função de potenciação
+pow() é igual a usar o operador ** porém na hora de usar em uma equação ela sai da ordem de precedencia.
+
+Multiplicando strings
+uma string pode ser multiplicada usando operadores aritiméticos.
+ex: print ('oi'*5)
+será exibido :oioioioioi
+
+Alinhando string na saida print()
+EX:
+nome = input('Qual o seu nome?')
+print('Prazer em te conhecer {:=^20}!').format(nome)}
+
+o simbolo de : representa uma formatação de palavra ou frase seguido do numero de espaços que vai ter no caso 20 espaços
+para preencher com a palavra digitada  e o resto com o simbolo de = como descrito acima.
+o simbolo de chapeusinho ^ significa que vai ficar tudo centralisado.
+
+Prazer em te conhecer ========ana=========!
+
+exemplo de formatação em numeros
+
+n1 = int(input('valor n1: '))
+n2 = int(input('Valor n2: '))
+s = n1 + n2
+m = n1 * n2
+d = n1 / n2
+di = n1 // n2
+e = n1 ** n2
+print('A soma é {}, o produto {}, e a divisão é {:.3f}'.format(s, m, d))
+print('A divisão inteira é {}, e potência {}'.format(di, e))
+
+a formatação (:.3f) redus o resultado dessa operação a 3 casas decimais depois da virgula
+
+para evitar que o programa quebre a linha é só colocar o comando end='' no final do primeiro print
+ só colocar o que quiser dentro das aspas simples
+
+ex:
+print('A soma é {}, o produto {}, e a divisão é {:.3f}'.format(s, m, d), end =' ')
+print('A divisão inteira é {}, e potência {}'.format(di, e))
+
+e para quebrar a linha inserir \n dentro da frase
+
+ex:
+print('A soma é {}, \n o produto {}, \n e a divisão é {:.3f}'.format(s, m, d))
+print('A divisão inteira é {}, e potência {}'.format(di, e))
+
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+código ansi escape sequence
+
+todo código ansi usado no python começa com
+\033[     m
+no espaço vazio é colocado o estilo da fonte, a cor da fonte e a cor de fundo da fonte, desta forma
+\033[estilo;texto;fundom
+exemplo
+\033[0;33;44m
+
+as variações são representadas da seguinte forma.
+
+Estilo
+0 = none
+1 = Bold
+4 = underline
+7 = negativo, ou seja inverte a cor de fundo com a cor de frente
+
+Cores
+30 = branco
+31 = vermelho
+32 = verde
+33 = amarelo
+34 = azul
+35 = roxo
+36 = azul claro
+37 = cinza
+
+Cores de fundo
+40 = branco
+41 = vermelho
+42 = verde
+43 = amarelo
+44 = azul
+45 = roxo
+46 = azul claro
+47 = cinza
+
+
+
+aplicação prática ficaria da seguinte forma
+
+print('\033[4;31;43mOlá, Mundo!')
+assim a cor de fundo ficaria até o final
+
+print('\033[4;31;43mOlá, Mundo!\033[m')
+assim a cor de fundo se limita até o final da frase

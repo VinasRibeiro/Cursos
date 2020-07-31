@@ -1,0 +1,153 @@
+As doc strings são usadas para criar um manual de como usar a função que vc criar.
+Para que outras pessoas possam entender como funciona a função que vc criou.
+
+EX:01
+
+def contador(i, f, p):
+    """
+    -> Faz uma contagem e mostra na tela.
+    :param i:Inicio da contagem
+    :param f:Fim da contagem
+    :param p:Passo da contagem
+    :return:Sem retorno
+    """
+    c = i
+    while c <= f:
+        print(f'{c} ', end='')
+        c += p
+    print('FIM')
+
+
+help(contador)
+
+-----------------------------------------------------------------------------------
+EX:02
+Parâmetros opcionais:
+Neste caso se na hora da chamada do metodo não for informado os parametros eles esrão subistituidos
+por 0.
+Assim não vai dar erro no programa.
+
+
+def somar(a=0,b=0,c=0):
+    s=a+b+c
+    print(f'A soma vale {s}')
+
+
+soma(3,2,5)
+soma(8,4)
+soma()
+
+-----------------------------------------------------------------------------
+Ex: 03 Escopo de variável
+
+Nas funções quando vc define uma variável dentro da função ela só funciona na função
+e não no programa todo
+Ou seja ela se chama variável local.
+A variável declarada no programa principal se chama variável global.
+
+def funcao():
+    #Este n1 esta dentro e vale 4 é local.
+    n1 =4
+    print(f'N1 dentro vale {n1}')
+
+#Este n1 esta fora e vale 2 é global
+n1 = 2
+print(f'N1 fora vale {n1}')
+
+----------------------------------------------------------------------------------------
+EX: 04
+Para usar o valor da variável global dentro da função com a mesma variável tem que usar o comando
+global
+
+Neste caso a variável 'a' vai vir de fora do programa pra dentro
+A variavel 'a' aqui vai receber 5 e depois 8 e a variável global vai ter o valor 8 tbm
+Ou seja a variavel com o comando global faz com que a função não retorne numero nenhum
+Mas ela conseguil alterar uma variável de fora com o comando global.
+
+
+def teste(b):
+
+    global a
+    a = 8
+    b += 4
+    c = 2
+    print(f'A dentro vale {a}')
+    print(f'B dentro vale {b}')
+    print(f'C dentro vale {c}')
+
+a = 5
+teste(a)
+print(f'A fora vale {a}')
+
+----------------------------------------------------------------
+
+EX 05 Retorno de valores
+O retorno na função serve para devolver um resultado do que a função foi criada pra fazer.
+E não só mostrar um resultado, como foi usado com o print.
+
+def soma( a = 0, b = 0, c = 0):
+    s = a + b + c
+    return s
+
+no caso o s vai ser atribuido nas variáveis r1, r2 e r3
+r1 = soma(3,2,5)
+r2 = soma(2,2)
+r3 = soma(6)
+
+print(r1)
+print(r2)
+print(r3)
+
+-----------------------------------------------------------------
+EX 06 retorno verdadeiro e falso
+
+As funções retornan qualquer tipo de parametro, como True ou False, lista, string e etc
+
+def par(n=0):
+    if n % 2 == 0:
+        return True
+    else:
+        return False
+
+
+num = int(input('Digite um número: '))
+#Neste caso a função retorna verdadeiro ou falso
+#Como todas as repetições das linguagem trabalham com isso.
+#O if altomaticamente verifica se é True ou False e executa a sua ação normalmente.
+
+if par(num):
+    print('PAR')
+else:
+    print('IMPAR')
+
+
+Escopo de importação
+
+Quando vc importa uma função fora da função que vc quer criar ela ocupa a memoria durante o programa
+até o fim, mesmo se vc usar ela só uma vez.
+
+Para corrigir isso, vc pode usar a importação dentro da função, assim a importação só vai ocupar memoria
+durante o uso da função que sempre é nasce e morre quando não é mais usada, ou seja deixa de ocupar espaço
+na memoria depois de ser usada.
+
+EX:
+
+def voto(ano):
+    from datetime import date
+
+    #Ano de dentro é local desta função
+    nasc = date.today().year - ano
+    print(nasc)
+
+    if nasc < 16:
+        resultado = 'NEGADO'
+    elif nasc >= 16 and nasc <= 17:
+        resultado = 'OPCIONAL'
+    elif nasc >= 18:
+        resultado = 'OBRIGATÒRIO'
+    return resultado
+
+#ano de fora é global
+ano = int(input('Seu ano de nascimento: '))
+
+print(voto(ano))

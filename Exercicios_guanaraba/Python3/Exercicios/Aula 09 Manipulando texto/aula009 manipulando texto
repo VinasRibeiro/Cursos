@@ -1,0 +1,161 @@
+Quando vc coloca um texto em uma variavél o programa inseri esse texto em uma cadeia de memórias no computador
+isso acontece com qualquer linguagem de programação
+Ex
+"Curso em video Python" contém 21 espaços na memória, ele conta os espaços vazios tbm e ele conta de 0 até 20 neste caso
+
+Quando o simbolo de couchete [] é usado vc acaba criando um array ou lista.
+
+frase='Curso em Video Python'
+
+o texto escrito acima vai entrar na variável frase que automáticamente vira uma lista ou um array.
+criando assim 21 espaços na memória da lista para cada carácter e começam a ser catalogados a partir do indíce 0 ou
+posição 0.
+
+Todos os metodos usados, não alterão o conteudo da variavél, altera somente a exibição que a funçao ou metodo
+exige na hora.
+para alterar o conteudo da variável tem que atribuir novamente a variável com o método junto.
+ex:
+frase = 'Curso de Python'
+frase = frase.replace('Python', 'Android')
+print(frase)
+retorna Curso de Android
+
+À uma série de comandos que podem ser usados nas listas para manipular os textos usando este formato.
+frase[ inicio : fim : numero pulos ]
+: representa que tem um inicio e fim da busca.
+quando vc coloca um numero para especificar a posição o programa considera como numero a ser contado
+por exemplo frase[0:13] ele vai contar 13 vezes ou seja até a casa 12.
+
+
+frase[9]
+retorna o caracter na posição 9 da lista no caso a letra 'V'.
+
+frase[9:13]
+retorna os caracteres de 9 a 12 no caso 'Vide'
+
+nota importante:
+
+o numero colocado entre [] faz o computador contar aquele numero de casa.
+Porém na memoria ele esta alocado de 0 até o ultimo caracter da frase
+
+ex:
+a frase vai de 0 a 20 para exibir a ultima letra é nescessário colocar até o 21 para ele buscar corretamente.
+sempre 1 a mais.
+
+frase[9:21:2]
+retorna as letras de 9 a 21 porém pulando de duas em duas casas.
+ex
+a frase retornaria 'V d o P t o' pula de dois em dois não exibindo a segunda letra.
+
+frase[:5]
+
+retorna a palavra 'Curso', quando não é colocado um numero antes do : ele busca o inicio da cadeia de letras até a
+posição do numero depois dos :.
+
+frase [15:]
+retorna a palavra 'Python', parecido com o exemplo anterior porém começa da posição do numero
+especifico e vai até o final.
+
+frase[9::3]
+retorna a posição numero 9 até o final porém exibe o terceiro numero pulando de 3 em 3.
+retorna V e P h
+
+
+ANALISE
+Analisando uma string, lista com métodos
+
+len(frase)
+retorna o numero de caracteres da lista ou array
+ex 21
+
+frase.count('o')
+Ele conta quantas letras "o" tem dentro da frase
+ex 3
+
+frase.count('o',0,13)
+retorna quantos 'o' existe entre 0 e a posição 12
+ex 1
+
+frase.find('deo')
+retorna em que posição começou as letras 'deo'
+ex 11
+
+frase.rfind('deo')
+retorna em que posição começou as letras 'deo' porém da direita para a esquerda.
+
+frase.find('Android')
+retorna o valor -1 pois não existe essa palavra Android então ele retorna -1 para mostrar que esta palavra não existe
+ex -1
+
+
+operador lógico in
+'Curso' in frase
+retorna se a palavra colocada se existe ou não na frase
+true = sim
+false = não
+
+frase.replace('Python', 'Android')
+subistitui a palavra Python por Android
+Como a palavra android tem mais letras que python o compilador acrescenta mais um espaço na cadeia da lista.
+OBS: O compilador não altera a variavel, sómente exibe com a palavra alterada.
+
+frase.upper()
+Transforma todas as letras minusculas em maiusculas.
+
+frase.lower()
+È o oposto da função anterior
+
+
+frase.capitalize()
+Coloca a primeira letra em maiuscula e todas as outras letras em minusculas.
+
+frase.title()
+ele pega todas as palavras e coloca a primeira letra de cada palavra em maiuscula.
+como toda frase tem as palavras separadas por espaço ele sabe diferenciar palavra por palavra.
+
+frase.strip()
+elimina espaços vazios no inicio e do final da frase, menos no meio que é importante e deve ser mantido.
+
+frase.rstrip()
+elimina as casas fazias no final ou do lado direito
+
+frase.lstrip()
+elimina as casas fazias no inicio ou do lado esquerdo da frase
+
+frase.split()
+tranforma cada palavra em uma lista ou seja separa cada paravra e coloca em uma lista ou array separados.
+tbm inicia por 0
+
+opções para usar com o método split()
+
+'-'.join(frase)
+ele junta todas as palavras que foram divididas na frase do split e coloca um traço '-' nos espaços vazios
+ou qualquer outro caractere que for colocado entre aspas simples' '.
+
+
+para escrever um texto grande
+
+ex:
+
+print("""sdkfjhglshdfglhsdlfhgsdfghsgdf
+hsgfdhsfghsfghsfghsfgh
+sgfhsfghsfghsfghsfgj
+fhgjghbnmfufgukfgk"""
+
+OBS:
+quando atribuir uma entrada de palavra tipo str vc pode utilizar varios métodos ou funções para a entrada de dados
+frase = str(input('Digite uma frase: ')).upper().strip()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
