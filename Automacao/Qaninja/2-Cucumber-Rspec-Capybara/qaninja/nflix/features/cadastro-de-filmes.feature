@@ -35,6 +35,7 @@ Funcionalidade: Cadastro de filmes
         Quando eu faço o cadastro deste filme
         Então devo visualizar a notificação <texto>
 
+#Essa massa de teste está no arquivo yaml
         Exemplos:
             | codigo            | texto                                          |
             | "no_title"        | "Oops - Filme sem titulo. Pode isso Arnaldo?"  | 
