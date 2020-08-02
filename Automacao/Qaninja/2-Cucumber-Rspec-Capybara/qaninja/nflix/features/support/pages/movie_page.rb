@@ -40,14 +40,21 @@ class MoviePage
         end
     end
 
+    def alert
+        find(".alert").text
+    end
 
+    def select_status(status)
+        find('input[placeholder=Status]').click
+        find('.el-select-dropdown__item', text: status).click
+    end
 
     #O parâmetro movie aqui é um array de dados que veio do arquivo yaml
     def create(movie)
         find('input[name=title]').set movie["title"]
 
-        find('input[placeholder=Status]').click
-        find('.el-select-dropdown__item', text: movie["status"]).click
+        select_status(movie["status"]) unless movie["status"].empty?
+
 
         find('input[name=year]').set movie["year"]
         find('input[name=release_date]').set movie["release_date"]
@@ -56,8 +63,15 @@ class MoviePage
 
         find("textarea[name=overview]").set movie["overview"]
         
-        upload(movie["cover"])
+        #O unless esexuta se for falso o .empty? retorna verdadeiro ou falso para vazio ou não
+        upload(movie["cover"]) unless movie["cover"].empty?
 
         find("#create-movie").click
+    end
+
+    def movie_tr(movie)
+        #Este comando busca elementos em uma tabela html pelo titulo do filme
+        #E retorna os dados da linha correspondente ao titulo
+        find('table tbody tr', text: movie['title'])
     end
 end
