@@ -12,7 +12,11 @@
 
 Dado('que {string} é um novo filme') do |movie_code|
     file = YAML.load_file(File.join(Dir.pwd, 'features/support/fixtures/movies.yaml'))
-    @movie = file[movie_code]    
+    @movie = file[movie_code]
+    
+    #Este comando apaga o filme da vez pra garantir que
+    #Na step Quando faço cadastro deste filme ele não exista
+    DataBase.new.delete_movie(@movie["title"])
 end
 
 Quando('eu faço o cadastro deste filme') do
