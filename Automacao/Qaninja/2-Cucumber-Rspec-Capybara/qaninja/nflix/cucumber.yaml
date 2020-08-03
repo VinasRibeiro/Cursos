@@ -1,0 +1,8 @@
+---
+default: -p dev
+dev: ENV_TYPE=dev
+hmg: ENV_TYPE=hmg
+
+# CI? => Continous Integration
+# Jenkins, CircleCI, Azure DevOps, Bitbucket Pipelines, Gilab
+#Este arquivo o cucumber reconhece para setar as configurações.

@@ -12,11 +12,13 @@ require_relative "helpers"
 #Como se fosse uma variável global, porém é um modulo global.
 World(Helpers)
 
+CONFIG = YAML.load_file(File.join(Dir.pwd, "features/support/config/#{ENV["ENV_TYPE"]}.yaml"))
+
 Capybara.configure do |config|
     config.default_driver = :selenium_chrome
-    config.app_host = "http://localhost:8080"
+    config.app_host = CONFIG["url"]
 
     #Este parâmetro define um tempo limite para encontrar elementos na pagina.
     #Assim não é preciso usar sleeps
-    config.default_max_wait_time=2
+    config.default_max_wait_time= 5
 end
