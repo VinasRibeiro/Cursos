@@ -19,6 +19,10 @@ Dado('que {string} é um novo filme') do |movie_code|
     DataBase.new.delete_movie(@movie["title"])
 end
 
+Dado('este filme já existe no catálogo') do
+   DataBase.new.insert_movie(@movie)
+end
+
 Quando('eu faço o cadastro deste filme') do
     @movie_page.add
     @movie_page.create(@movie)
