@@ -18,5 +18,5 @@ Capybara.configure do |config|
 
     #Este parâmetro define um tempo limite para encontrar elementos na pagina.
     #Assim não é preciso usar sleeps
-    config.default_max_wait_time=10
+    config.default_max_wait_time=2
 end
