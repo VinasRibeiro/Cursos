@@ -1,0 +1,20 @@
+---
+default: -p dev -p chrome -p json -p pretty
+ci: -p dev -p chrome -p json -p progress
+dev: ENV_TYPE=dev
+hmg: ENV_TYPE=hmg
+firefox: BROWSER=firefox
+chrome: BROWSER=chrome
+headless: BROWSER=headless
+html: --format html --out=log/report.html
+json: --format json --out=log/report.json
+pretty: --format pretty
+progress: --format progress
+
+# CI? => Continous Integration
+# Jenkins, CircleCI, Azure DevOps, Bitbucket Pipelines, Gilab
+# Este arquivo o cucumber reconhece para setar as configurações.
+# O -p significa parametro ou seja, quando colcoa -p e alguma 
+# Variável neste documento o cucumber executa aquele parâmetro.
+# O parâmetro pretty significa mostrar o relatório também no terminal
+# Assim ele vai exibir um relatório em html e no terminal tbm.
