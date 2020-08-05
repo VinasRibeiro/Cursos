@@ -14,8 +14,20 @@ World(Helpers)
 
 CONFIG = YAML.load_file(File.join(Dir.pwd, "features/support/config/#{ENV["ENV_TYPE"]}.yaml"))
 
+ENV["BROWSER"]
+case ENV["BROWSER"]
+when "firefox"
+  @driver = :selenium
+when "chrome"
+  @driver = :selenium_chrome
+when "headless"
+  @driver = :selenium_chrome_headless
+else
+  puts "Invalid Browser"
+end
+
 Capybara.configure do |config|
-    config.default_driver = :selenium_chrome
+    config.default_driver = @driver
     config.app_host = CONFIG["url"]
 
     #Este parâmetro define um tempo limite para encontrar elementos na pagina.
