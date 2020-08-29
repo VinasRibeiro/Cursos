@@ -22,3 +22,5 @@ end
 Então('devo visualizar a mensagem de alerta {string}') do |expect_message|
     expect(@login_page.alert).to eql expect_message
 end
+
+
